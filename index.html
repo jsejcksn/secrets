@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Encrypt and decrypt secret messages">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Secrets</title>
+	
+	<link rel="stylesheet" href="secrets.css" />
+	
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+</head>
+
+<body>
+
+<header>
+	<div>
+		<h1>Secrets</h1>
+		<p>Supply the key first, then fill in a secret message to encrypt, or encoded text to decrypt.</p>
+	</div>
+</header>
+
+<div id="data">
+	<input id="key" type="text" placeholder="key" autofocus />
+	<textarea id="plaintext" placeholder="Secret message"></textarea>
+	<textarea id="ciphertext" placeholder="Encoded text"></textarea>
+</div>
+
+<script src="secrets.js"></script>
+
+</body>
+</html>
