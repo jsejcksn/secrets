@@ -37,7 +37,7 @@ function warnKey() { // Informs user to enter key before other data
 	var keyIn = document.getElementById("key");
 	if (!key || key == '') { // key does not exist or is empty
 		keyIn.className = 'warn';
-		setTimeout(function() { keyIn.removeAttribute('class'); }, 500);
+		setTimeout(function() { keyIn.removeAttribute('class'); }, 1000);
 		keyIn.placeholder = 'Set key first';
 		document.getElementById('key').focus();
 		}
