@@ -7,7 +7,7 @@ var t;
 function decode(key, cipher) {
 	console.log('-decode event-');
 	var cipherInt = parseInt(cipher,10);
-	console.log(cipherInt + ' is typeof ' + typeof cipherInt);
+	// console.log(cipherInt + ' is typeof ' + typeof cipherInt);
 	var text = String.fromCharCode(cipherInt);
 	return text;
 	}
@@ -32,17 +32,18 @@ function listenKey() { // Updates key value
 	k = document.getElementById('key').value;
 	}
 
-function warnKey() { // Informs user to enter key before any other data
+function warnKey() { // Informs user to enter key before other data
 	var key = document.getElementById('key').value;
 	var keyIn = document.getElementById("key");
 	if (!key || key == '') { // key does not exist or is empty
-		keyIn.placeholder = 'Set key first';
 		keyIn.className = 'warn';
-		setTimeout(function() { keyIn.className = ''; }, 1000);
+		setTimeout(function() { keyIn.removeAttribute('class'); }, 500);
+		keyIn.placeholder = 'Set key first';
 		document.getElementById('key').focus();
-		} else {
-			return false;
 		}
+		else {
+			return false;
+			}
 	}
 
 document.getElementById('key').addEventListener('input', listenKey); // Listens for key change
