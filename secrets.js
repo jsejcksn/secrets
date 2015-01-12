@@ -14,6 +14,12 @@ function decode(key, cipher) {
 
 function encode(key, text) {
 	console.log('-encode event-');
+	//
+	var arrText = text.split('');
+	console.log(arrText);
+	var arrTextChar = arrText.map(charCodeAt()); // Not working
+	console.log(arrTextChar);
+	//
 	var cipher = text.charCodeAt(0);
 	return cipher;
 	}
