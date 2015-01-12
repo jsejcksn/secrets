@@ -18,17 +18,17 @@ function encode(key, text) {
 	return cipher;
 	}
 
-function listenDecode() {
+function listenDecode() { // Updates ciphertext variable, invokes decoding function, then sets plaintext to the string returned
 	c = document.getElementById('ciphertext').value;
 	document.getElementById('plaintext').value = decode(k,c);
 	}
 
-function listenEncode() {
+function listenEncode() { // Updates plaintext variable, invokes encoding function, then sets ciphertext to the string returned
 	t = document.getElementById('plaintext').value;
 	document.getElementById('ciphertext').value = encode(k,t);
 	}
 
-function listenKey() { // Updates key value
+function listenKey() { // Updates key variable
 	k = document.getElementById('key').value;
 	}
 
