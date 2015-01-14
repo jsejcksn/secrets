@@ -6,7 +6,7 @@ var t;
 
 function decode(key, cipher) {
 	console.log('-decode event-');
-	var cipherInt = parseInt(cipher,10);
+	var cipherInt = returnInt(cipher);
 	// console.log(cipherInt + ' is typeof ' + typeof cipherInt);
 	var text = String.fromCharCode(cipherInt);
 	return text;
@@ -17,7 +17,9 @@ function encode(key, text) {
 	//
 	var arrText = text.split('');
 	console.log(arrText);
-	var arrTextChar = arrText.map(charCodeAt()); // Not working
+	var arrTextChar = arrText.map(function(x) {
+		return x.charCodeAt(0) // Here
+		} );
 	console.log(arrTextChar);
 	//
 	var cipher = text.charCodeAt(0);
@@ -36,6 +38,10 @@ function listenEncode() { // Updates plaintext variable, invokes encoding functi
 
 function listenKey() { // Updates key variable
 	k = document.getElementById('key').value;
+	}
+
+function returnInt(x) {
+	return parseInt(x,10);
 	}
 
 function warnKey() { // Informs user to enter key before other data
