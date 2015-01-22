@@ -6,23 +6,27 @@ var t;
 
 function decode(key, cipher) {
 	console.log('-decode event-');
-	var cipherInt = returnInt(cipher);
-	// console.log(cipherInt + ' is typeof ' + typeof cipherInt);
-	var text = String.fromCharCode(cipherInt);
+	var text = 'Still being developed.\n\n' + cipher;
 	return text;
 	}
 
 function encode(key, text) {
 	console.log('-encode event-');
-	//
 	var arrText = text.split('');
 	console.log(arrText);
-	var arrTextChar = arrText.map(function(x) {
-		return x.charCodeAt(0) // Here
+	var arrTextNum = arrText.map(function(x) {
+		return x.charCodeAt(0)
 		} );
-	console.log(arrTextChar);
-	//
-	var cipher = text.charCodeAt(0);
+	console.log(arrTextNum);
+	var arrCipherNum = arrTextNum.map(function(x) {
+		return x + 3
+		} );
+	var arrCipher = arrCipherNum.map(function(x) {
+		return String.fromCharCode(x)
+		} );
+	console.log(arrCipher);
+	var strCipher = arrCipher.join('');
+	var cipher = 'Still being developed.\n\n' + strCipher;
 	return cipher;
 	}
 
