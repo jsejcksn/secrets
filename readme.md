@@ -1,5 +1,5 @@
 # Secrets
 
-A javascript app to encode and decode text messages
+A javascript app for encoding and decoding text
 
 In development. [Demo here](//jessejackson.github.io/secrets).
