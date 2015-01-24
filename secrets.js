@@ -30,7 +30,7 @@ function encode(key, text) { // Primary encode operation
 	return cipher;
 	}
 
-function headerTransform() { // Encrypts header letters and decrypts them
+function headerTransform() { // "Encrypts" header letters and "decrypts" them
 	var h1 = document.body.getElementsByTagName('header')[0].getElementsByTagName('div')[0].getElementsByTagName('h1')[0];
 	var arrH1Num = [];
 	for (var i = 0; i < 7 ; i++) {
@@ -38,13 +38,7 @@ function headerTransform() { // Encrypts header letters and decrypts them
 		}
 	var arrH1 = uniDecode(arrH1Num);
 	console.log(arrH1.join(''));
-	// keyID.className = 'warn';
-	// setTimeout(function() { keyID.removeAttribute('class'); }, 1000);
 	// h1.innerHTML = 'Secrets';
-	}
-
-function rand(min, max) { // Staple function
-	return Math.floor(Math.random() * (max - min)) + min;
 	}
 
 function listenDecode() { // Updates ciphertext variable, invokes decoding function, then sets plaintext to the string returned
@@ -59,6 +53,10 @@ function listenEncode() { // Updates plaintext variable, invokes encoding functi
 
 function listenKey() { // Updates key variable
 	keyData = keyID.value;
+	}
+
+function rand(min, max) { // Staple function
+	return Math.floor(Math.random() * (max - min)) + min;
 	}
 
 function returnInt(n) { // Staple function
