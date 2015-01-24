@@ -23,7 +23,7 @@ function encode(key, text) { // Primary encode operation
 	var arrText = text.split('');
 	var arrTextNum = uniEncode(arrText);
 	var arrCipherNum = arrTextNum.map(function(x) {
-		return x + 3
+		return x + 3;
 		} );
 	var arrCipher = uniDecode(arrCipherNum);
 	var cipher = arrCipher.join('');
@@ -37,8 +37,148 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 		arrH1Num.push(rand(33, 126));
 		}
 	var arrH1 = uniDecode(arrH1Num);
-	console.log(arrH1.join(''));
-	// h1.innerHTML = 'Secrets';
+	h1.innerHTML = arrH1.join('');
+	
+	
+	// This **has** to be cleaned up (and randomized)
+	var count = 0;
+	function pos0() {
+		setTimeout(function() {
+			for (var i = 0; i < 7 ; i++) {
+				arrH1Num[i] = rand(33, 126);
+				}
+			arrH1 = uniDecode(arrH1Num);
+			h1.innerHTML = arrH1.join('');
+			count++;
+			if (count < 3) {
+				pos0();
+				}
+			}, 75);
+		}
+	
+	function pos1() {
+		setTimeout(function() {
+			for (var i = 1; i < 7 ; i++) {
+				arrH1Num[i] = rand(33, 126);
+				}
+			arrH1 = uniDecode(arrH1Num);
+			arrH1[0] = 'S';
+			h1.innerHTML = arrH1.join('');
+			count++;
+			if (count < 6) {
+				pos1();
+				}
+			}, 75);
+		}
+	
+	function pos2() {
+		setTimeout(function() {
+			for (var i = 2; i < 7 ; i++) {
+				arrH1Num[i] = rand(33, 126);
+				}
+			arrH1 = uniDecode(arrH1Num);
+			arrH1[0] = 'S';
+			arrH1[1] = 'e';
+			h1.innerHTML = arrH1.join('');
+			count++;
+			if (count < 9) {
+				pos2();
+				}
+			}, 75);
+		}
+
+	function pos3() {
+		setTimeout(function() {
+			for (var i = 3; i < 7 ; i++) {
+				arrH1Num[i] = rand(33, 126);
+				}
+			arrH1 = uniDecode(arrH1Num);
+			arrH1[0] = 'S';
+			arrH1[1] = 'e';
+			arrH1[2] = 'c';
+			h1.innerHTML = arrH1.join('');
+			count++;
+			if (count < 12) {
+				pos3();
+				}
+			}, 75);
+		}
+	
+	function pos4() {
+		setTimeout(function() {
+			for (var i = 4; i < 7 ; i++) {
+				arrH1Num[i] = rand(33, 126);
+				}
+			arrH1 = uniDecode(arrH1Num);
+			arrH1[0] = 'S';
+			arrH1[1] = 'e';
+			arrH1[2] = 'c';
+			arrH1[3] = 'r';
+			h1.innerHTML = arrH1.join('');
+			count++;
+			if (count < 15) {
+				pos4();
+				}
+			}, 75);
+		}
+	
+	function pos5() {
+		setTimeout(function() {
+			for (var i = 5; i < 7 ; i++) {
+				arrH1Num[i] = rand(33, 126);
+				}
+			arrH1 = uniDecode(arrH1Num);
+			arrH1[0] = 'S';
+			arrH1[1] = 'e';
+			arrH1[2] = 'c';
+			arrH1[3] = 'r';
+			arrH1[4] = 'e';
+			h1.innerHTML = arrH1.join('');
+			count++;
+			if (count < 18) {
+				pos5();
+				}
+			}, 75);
+		}
+	
+	function pos6() {
+		setTimeout(function() {
+			for (var i = 6; i < 7 ; i++) {
+				arrH1Num[i] = rand(33, 126);
+				}
+			arrH1 = uniDecode(arrH1Num);
+			arrH1[0] = 'S';
+			arrH1[1] = 'e';
+			arrH1[2] = 'c';
+			arrH1[3] = 'r';
+			arrH1[4] = 'e';
+			arrH1[5] = 't';
+			h1.innerHTML = arrH1.join('');
+			count++;
+			if (count < 21) {
+				pos6();
+				}
+			}, 75);
+		}
+	
+	function pos7() {
+		setTimeout(function() {
+			h1.innerHTML = 'Secrets';
+			}, 75);
+		}
+	
+	function changeLetters() {
+		pos0();
+		setTimeout(pos1, 225);
+		setTimeout(pos2, 225*2);
+		setTimeout(pos3, 225*3);
+		setTimeout(pos4, 225*4);
+		setTimeout(pos5, 225*5);
+		setTimeout(pos6, 225*6);
+		setTimeout(pos7, 225*7.1);
+		}
+		
+	setTimeout(changeLetters, 1000);
 	}
 
 function listenDecode() { // Updates ciphertext variable, invokes decoding function, then sets plaintext to the string returned
@@ -65,13 +205,13 @@ function returnInt(n) { // Staple function
 
 function uniDecode(arr) { // Maps an array of Unicode values to their UTF-8 characters
 	return arr.map(function(x) {
-		return String.fromCharCode(x)
+		return String.fromCharCode(x);
 		} );
 	}
 
 function uniEncode(arr) { // Maps an array of UTF-8 characters to their Unicode values
 	return arr.map(function(x) {
-		return x.charCodeAt(0)
+		return x.charCodeAt(0);
 		} );
 	}
 
@@ -100,4 +240,4 @@ cipherID.addEventListener('focus', warnKey); // Listens for attempted input in c
 
 // Execute ----------
 
-//
+headerTransform();
