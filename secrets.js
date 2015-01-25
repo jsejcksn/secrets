@@ -223,9 +223,9 @@ function warnKey() { // Informs user to enter key before other data
 		keyID.placeholder = 'Set key first';
 		keyID.focus();
 		}
-		else {
-			return false;
-			}
+	else {
+		return false;
+		}
 	}
 
 
