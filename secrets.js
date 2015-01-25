@@ -50,7 +50,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 			arrH1 = uniDecode(arrH1Num);
 			h1.innerHTML = arrH1.join('');
 			count++;
-			if (count < 3) {
+			if (count < 13) {
 				pos0();
 				}
 			}, 75);
@@ -65,7 +65,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 			arrH1[0] = 'S';
 			h1.innerHTML = arrH1.join('');
 			count++;
-			if (count < 6) {
+			if (count < 16) {
 				pos1();
 				}
 			}, 75);
@@ -81,7 +81,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 			arrH1[1] = 'e';
 			h1.innerHTML = arrH1.join('');
 			count++;
-			if (count < 9) {
+			if (count < 19) {
 				pos2();
 				}
 			}, 75);
@@ -98,7 +98,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 			arrH1[2] = 'c';
 			h1.innerHTML = arrH1.join('');
 			count++;
-			if (count < 12) {
+			if (count < 22) {
 				pos3();
 				}
 			}, 75);
@@ -116,7 +116,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 			arrH1[3] = 'r';
 			h1.innerHTML = arrH1.join('');
 			count++;
-			if (count < 15) {
+			if (count < 25) {
 				pos4();
 				}
 			}, 75);
@@ -135,7 +135,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 			arrH1[4] = 'e';
 			h1.innerHTML = arrH1.join('');
 			count++;
-			if (count < 18) {
+			if (count < 28) {
 				pos5();
 				}
 			}, 75);
@@ -155,7 +155,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 			arrH1[5] = 't';
 			h1.innerHTML = arrH1.join('');
 			count++;
-			if (count < 21) {
+			if (count < 31) {
 				pos6();
 				}
 			}, 75);
@@ -169,16 +169,16 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 	
 	function changeLetters() {
 		pos0();
-		setTimeout(pos1, 225);
-		setTimeout(pos2, 225*2);
-		setTimeout(pos3, 225*3);
-		setTimeout(pos4, 225*4);
-		setTimeout(pos5, 225*5);
-		setTimeout(pos6, 225*6);
-		setTimeout(pos7, 225*7.1);
+		setTimeout(pos1, 975);
+		setTimeout(pos2, 975+225);
+		setTimeout(pos3, 975+(225*2));
+		setTimeout(pos4, 975+(225*3));
+		setTimeout(pos5, 975+(225*4));
+		setTimeout(pos6, 975+(225*5));
+		setTimeout(pos7, 980+(225*6));
 		}
 		
-	setTimeout(changeLetters, 1000);
+	changeLetters();
 	}
 
 function listenDecode() { // Updates ciphertext variable, invokes decoding function, then sets plaintext to the string returned
