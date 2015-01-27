@@ -14,7 +14,16 @@ var textID = document.getElementById('plaintext');
 
 function decode(key, cipher) { // Primary decode operation
 	console.log('-decode event-');
-	var text = 'Still being developed.\n\n' + cipher;
+	
+	var arrCipher = cipher.split('');
+	var arrCipherNum = uniEncode(arrCipher);
+	var arrTextNum = arrCipherNum.map(function(x) {
+		return x - (key.length);
+		} );
+	var arrText = uniDecode(arrTextNum);
+	var text = arrText.join('');
+	
+	// var text = 'Still being developed.\n\n' + cipher;
 	return text;
 	}
 
@@ -23,7 +32,7 @@ function encode(key, text) { // Primary encode operation
 	var arrText = text.split('');
 	var arrTextNum = uniEncode(arrText);
 	var arrCipherNum = arrTextNum.map(function(x) {
-		return x + 3;
+		return x + (key.length);
 		} );
 	var arrCipher = uniDecode(arrCipherNum);
 	var cipher = arrCipher.join('');
@@ -38,7 +47,6 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 		}
 	var arrH1 = uniDecode(arrH1Num);
 	h1.innerHTML = arrH1.join('');
-	
 	
 	// This **has** to be cleaned up (and randomized)
 	var count = 0;
