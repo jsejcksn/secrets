@@ -1,3 +1,3 @@
 # Secrets, a javascript app for encoding and decoding text
 
-In development. [Demo here](//jessejackson.github.io/secrets).
+In development. [Demo here](//jsejcksn.github.io/secrets).
