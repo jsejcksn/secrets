@@ -229,7 +229,7 @@
 
   function warnKey() { // Informs user to enter key before other data
     var key = keyID.value;
-    if (!key || key == '') { // key does not exist or is empty
+    if (!key || key === '') { // key does not exist or is empty
       keyID.className = 'warn';
       setTimeout(function() {
         keyID.removeAttribute('class');
