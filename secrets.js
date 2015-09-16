@@ -1,6 +1,7 @@
 // Encodes and Decodes text
 
 (function() {
+  'use strict';
 
   // Variables ----------
 
