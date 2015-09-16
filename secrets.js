@@ -1,5 +1,7 @@
 // Encodes and Decodes text
 
+(function() {
+
 // Variables ----------
 
 var cipherData;
@@ -14,7 +16,7 @@ var textID = document.getElementById('plaintext');
 
 function decode(key, cipher) { // Primary decode operation
 	console.log('-decode event-');
-	
+
 	var arrCipher = cipher.split('');
 	var arrCipherNum = uniEncode(arrCipher);
 	var arrTextNum = arrCipherNum.map(function(x) {
@@ -22,7 +24,7 @@ function decode(key, cipher) { // Primary decode operation
 		} );
 	var arrText = uniDecode(arrTextNum);
 	var text = arrText.join('');
-	
+
 	// var text = 'Still being developed.\n\n' + cipher;
 	return text;
 	}
@@ -47,7 +49,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 		}
 	var arrH1 = uniDecode(arrH1Num);
 	h1.innerHTML = arrH1.join('');
-	
+
 	// This **has** to be cleaned up (and randomized)
 	var count = 0;
 	function pos0() {
@@ -63,7 +65,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 				}
 			}, 75);
 		}
-	
+
 	function pos1() {
 		setTimeout(function() {
 			for (var i = 1; i < 7 ; i++) {
@@ -78,7 +80,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 				}
 			}, 75);
 		}
-	
+
 	function pos2() {
 		setTimeout(function() {
 			for (var i = 2; i < 7 ; i++) {
@@ -111,7 +113,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 				}
 			}, 75);
 		}
-	
+
 	function pos4() {
 		setTimeout(function() {
 			for (var i = 4; i < 7 ; i++) {
@@ -129,7 +131,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 				}
 			}, 75);
 		}
-	
+
 	function pos5() {
 		setTimeout(function() {
 			for (var i = 5; i < 7 ; i++) {
@@ -148,7 +150,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 				}
 			}, 75);
 		}
-	
+
 	function pos6() {
 		setTimeout(function() {
 			for (var i = 6; i < 7 ; i++) {
@@ -168,13 +170,13 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 				}
 			}, 75);
 		}
-	
+
 	function pos7() {
 		setTimeout(function() {
 			h1.innerHTML = 'Secrets';
 			}, 75);
 		}
-	
+
 	function changeLetters() {
 		pos0();
 		setTimeout(pos1, 975);
@@ -185,7 +187,7 @@ function headerTransform() { // "Encrypts" header letters and "decrypts" them
 		setTimeout(pos6, 975+(225*5));
 		setTimeout(pos7, 980+(225*6));
 		}
-		
+
 	changeLetters();
 	}
 
@@ -249,3 +251,5 @@ cipherID.addEventListener('focus', warnKey); // Listens for attempted input in c
 // Execute ----------
 
 headerTransform();
+
+}());
