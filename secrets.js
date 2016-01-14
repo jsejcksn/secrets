@@ -1,6 +1,6 @@
 // Encodes and Decodes text
 
-(function() {
+var secrets = (function() {
   'use strict';
 
   // Variables ----------
@@ -254,5 +254,12 @@
   // Execute ----------
 
   headerTransform();
+
+  // Public ----------
+
+  return {
+    decode: decode,
+    encode: encode
+  };
 
 }());
