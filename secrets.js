@@ -25,18 +25,25 @@ var secrets = (function() {
     });
     var arrText = uniDecode(arrTextNum);
     var text = arrText.join('');
-
-    // var text = 'Still being developed.\n\n' + cipher;
     return text;
   }
 
   function encode(key, text) { // Primary encode operation
     console.log('-encode event-');
+    var arrKey = key.split(''); // New
     var arrText = text.split('');
+    var arrKeyNum = uniEncode(arrKey); // New
     var arrTextNum = uniEncode(arrText);
-    var arrCipherNum = arrTextNum.map(function(x) {
-      return x + (key.length);
-    });
+    var arrKeystream = []; // New
+    for (var i = 0; i < arrTextNum.length; i++) {
+      var mult = parseInt(i / arrKeyNum.length);
+      var pos = i % arrKeyNum.length;
+      arrKeystream.push(arrKeyNum[pos] + mult);
+    }
+    var arrCipherNum = [];
+    for (var j = 0; j < arrTextNum.length; j++) {
+      arrCipherNum.push((arrTextNum[j] + arrKeystream[j]) % 65536);
+    }
     var arrCipher = uniDecode(arrCipherNum);
     var cipher = arrCipher.join('');
     return cipher;
