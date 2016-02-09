@@ -17,12 +17,20 @@ var secrets = (function() {
 
   function decode(key, cipher) { // Primary decode operation
     console.log('-decode event-');
-
+    var arrKey = key.split('');
     var arrCipher = cipher.split('');
+    var arrKeyNum = uniEncode(arrKey);
     var arrCipherNum = uniEncode(arrCipher);
-    var arrTextNum = arrCipherNum.map(function(x) {
-      return x - (key.length);
-    });
+    var arrKeystream = [];
+    for (var i = 0; i < arrCipherNum.length; i++) {
+      var mult = parseInt(i / arrKeyNum.length);
+      var pos = i % arrKeyNum.length;
+      arrKeystream.push(arrKeyNum[pos] + mult);
+    }
+    var arrTextNum = [];
+    for (var j = 0; j < arrCipherNum.length; j++) {
+      arrTextNum.push((arrCipherNum[j] + 65536 - arrKeystream[j]) % 65536);
+    }
     var arrText = uniDecode(arrTextNum);
     var text = arrText.join('');
     return text;
@@ -30,11 +38,11 @@ var secrets = (function() {
 
   function encode(key, text) { // Primary encode operation
     console.log('-encode event-');
-    var arrKey = key.split(''); // New
+    var arrKey = key.split('');
     var arrText = text.split('');
-    var arrKeyNum = uniEncode(arrKey); // New
+    var arrKeyNum = uniEncode(arrKey);
     var arrTextNum = uniEncode(arrText);
-    var arrKeystream = []; // New
+    var arrKeystream = [];
     for (var i = 0; i < arrTextNum.length; i++) {
       var mult = parseInt(i / arrKeyNum.length);
       var pos = i % arrKeyNum.length;
