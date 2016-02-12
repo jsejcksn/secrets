@@ -1,6 +1,6 @@
 # Secrets, a javascript library (and app) for encoding and decoding text
 
-## What is it
+## What it is
 
 Secrets is a js library for sending secret messages using a simplistic stream cipher (like a digital [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)).
 
