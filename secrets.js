@@ -16,7 +16,6 @@ var secrets = (function() {
   // Functions ----------
 
   function decode(key, cipher) { // Primary decode operation
-    console.log('-decode event-');
     var arrKey = key.split('');
     var arrCipher = cipher.split('');
     var arrKeyNum = uniEncode(arrKey);
@@ -37,7 +36,6 @@ var secrets = (function() {
   }
 
   function encode(key, text) { // Primary encode operation
-    console.log('-encode event-');
     var arrKey = key.split('');
     var arrText = text.split('');
     var arrKeyNum = uniEncode(arrKey);
