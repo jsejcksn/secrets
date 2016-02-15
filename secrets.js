@@ -23,7 +23,7 @@ var secrets = (function() {
     var arrCipherNum = uniEncode(arrCipher);
     var arrKeystream = [];
     for (var i = 0; i < arrCipherNum.length; i++) {
-      var mult = parseInt(i / arrKeyNum.length);
+      var mult = returnInt(i / arrKeyNum.length);
       var pos = i % arrKeyNum.length;
       arrKeystream.push(arrKeyNum[pos] + mult);
     }
@@ -44,7 +44,7 @@ var secrets = (function() {
     var arrTextNum = uniEncode(arrText);
     var arrKeystream = [];
     for (var i = 0; i < arrTextNum.length; i++) {
-      var mult = parseInt(i / arrKeyNum.length);
+      var mult = returnInt(i / arrKeyNum.length);
       var pos = i % arrKeyNum.length;
       arrKeystream.push(arrKeyNum[pos] + mult);
     }
