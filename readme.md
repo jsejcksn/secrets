@@ -14,7 +14,7 @@ I made an app which is hosted  [here](//jsejcksn.github.io/secrets) where you ca
 
 ### JS library
 
-By utilizing `secrets.js`, you can use the following methods to produce encrypted text or to decrypt encrypted text:
+By utilizing [`secrets.js`](secrets.js), you can use the following methods to produce encrypted text or to decrypt encrypted text:
 
   - `secrets.encode(key, text)`  
   Where `key` is the key/password you have chosen to use and `text` is the original message you want to encrypt.
