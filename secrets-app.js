@@ -185,7 +185,7 @@
   function warnKey() { // Informs user to enter key before other data
     var key = keyID.value;
     if (key === '') { // key is empty
-      keyID.className = 'warn';
+      keyID.className = 'animate';
       setTimeout(function() {
         keyID.removeAttribute('class');
       }, 1000);
