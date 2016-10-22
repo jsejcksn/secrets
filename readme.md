@@ -8,9 +8,9 @@ Secrets is a js library for creating secret messages using a simplistic stream c
 
 ### App
 
-I made an app which is hosted  [here](//jsejcksn.github.io/secrets) where you can just enter a key (password) along with your message to produce the encoded message which you can send to someone. Or if you have received an encoded message from someone, you can enter the key and text you received to produce the original secret message.
+I made an app which is hosted  [here](https://jsejcksn.github.io/secrets) where you can just enter a key (password) along with your message to produce the encoded message which you can send to someone. Or if you have received an encoded message from someone, you can enter the key and text you received to produce the original secret message.
 
-*Important note: both sender and receiver must be using Unicode character encoding (utf-8 for example) or the message will not be correctly transmitted. I have noticed a problem when sending between iOS and Android devices using Google Hangouts.*
+> Important note: both sender and receiver must be using Unicode character encoding (utf-8 for example) or the message will not be correctly transmitted. I have noticed a problem when sending between iOS and Android devices using Google Hangouts.*
 
 ### JS library
 
