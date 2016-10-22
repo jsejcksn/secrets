@@ -2,7 +2,7 @@
 
 ## What it is
 
-Secrets is a js library for sending secret messages using a simplistic stream cipher (like a digital [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)).
+Secrets is a js library for creating secret messages using a simplistic stream cipher (like a digital [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)).
 
 ## How to use it
 
