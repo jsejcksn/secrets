@@ -1,0 +1,25 @@
+{
+  "name": "secrets-js",
+  "version": "0.9.1",
+  "description": "A library for sending secret messages using a simplistic stream cipher (like a digital Enigma machine)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsejcksn/secrets.git"
+  },
+  "keywords": [
+    "secrets",
+    "cipher",
+    "secret message",
+    "enigma machine"
+  ],
+  "author": "Jesse Jackson <npm@jcksn.org> (http://jcksn.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsejcksn/secrets/issues"
+  },
+  "homepage": "https://github.com/jsejcksn/secrets#readme"
+}
